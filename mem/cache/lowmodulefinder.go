@@ -174,3 +174,17 @@ func NewStripedLocalVRemoteLowModuleFinder(memAddrOffset, numBanks, striping, st
 	f.LowModules = make([]akita.Port, 0)
 	return f
 }
+
+type HybridLowModuleFinder struct {
+	LowModules []akita.Port
+}
+
+func (f *HybridLowModuleFinder) Find(address uint64) akita.Port {
+	return f.LowModules[0]
+}
+
+func NewHybridLowModuleFinder() *HybridLowModuleFinder {
+	f := new(HybridLowModuleFinder)
+	f.LowModules = make([]akita.Port, 0)
+	return f
+}
