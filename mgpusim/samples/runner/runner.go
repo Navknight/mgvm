@@ -1385,7 +1385,6 @@ func (r *Runner) buildTimingPlatform() {
 		b = b.SwitchL2TLBStriping(*useSwitching)
 		b = b.UsePtCaching(*ptCaching)
 		r.Engine, r.GPUDriver = b.Build()
-
 	default:
 		panic("oh no!")
 	}
